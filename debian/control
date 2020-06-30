@@ -1,0 +1,18 @@
+Source: ardb
+Maintainer: Matheus Santos <vorj.dux@gmail.com>
+Section: misc
+Priority: extra
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9), g++, make
+
+Package: ardb
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Ardb: A High Performance Persistent NoSql, Full Redis-Protocol Compatibility
+
+Package: ardb-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: ardb (= ${binary:Version})
+Description: Debug symbols for Ardb: A High Performance Persistent NoSql, Full Redis-Protocol Compatibility

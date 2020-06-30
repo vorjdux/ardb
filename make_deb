@@ -1,0 +1,13 @@
+#!/bin/bash
+
+make deb
+
+version=$(dpkg-parsechangelog -S version)
+distro=$(lsb_release -c -s)
+branch=$(git rev-parse --abbrev-ref HEAD)
+arch=$(dpkg-architecture -qDEB_BUILD_ARCH)
+
+new_version="$version$distro+$branch"
+
+sudo mv "../ardb_${version}_${arch}.deb" "../../ardb_${new_version}_${arch}.deb"
+sudo mv "../ardb-dbg_${version}_${arch}.deb" "../../ardb-dbg_${new_version}_${arch}.deb"

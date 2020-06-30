@@ -542,12 +542,12 @@ valgrind:
 	$(MAKE) OPT="-O0" MALLOC="libc"
 
 dist:clean all
-	rm -rf ardb-${ARDB_VERSION};mkdir -p ardb-${ARDB_VERSION}/bin ardb-${ARDB_VERSION}/conf ardb-${ARDB_VERSION}/logs ardb-${ARDB_VERSION}/data ardb-${ARDB_VERSION}/repl ardb-${ARDB_VERSION}/backup; \
-	cp ardb-server ardb-${ARDB_VERSION}/bin; cp ardb-test ardb-${ARDB_VERSION}/bin; cp ardb-repair ardb-${ARDB_VERSION}/bin; cp ../ardb.conf ardb-${ARDB_VERSION}/conf; \
-	tar czvf ardb-bin-${ARDB_VERSION}.tar.gz ardb-${ARDB_VERSION}; rm -rf ardb-${ARDB_VERSION};
+	rm -rf ardb-${ARDB_VERSION}*; mkdir -p ardb-${ARDB_VERSION}/bin ardb-${ARDB_VERSION}/etc ardb-${ARDB_VERSION}/log ardb-${ARDB_VERSION}/data ardb-${ARDB_VERSION}/repl ardb-${ARDB_VERSION}/backup; \
+	cp ardb-server ardb-${ARDB_VERSION}/bin; cp ardb-test ardb-${ARDB_VERSION}/bin; cp ardb-repair ardb-${ARDB_VERSION}/bin; cp ../ardb.conf ardb-${ARDB_VERSION}/etc; \
+	tar czvf ardb-${ARDB_VERSION}.tar.gz ardb-${ARDB_VERSION}; rm -rf ardb-${ARDB_VERSION}
 
 clean:
-	rm -f  ${CORE_OBJECTS} $(SERVEROBJ) ${STORAGE_ENGINE_ALL_OBJ} ${TESTOBJ} ${REPAIR_TOOL_OBJ} ${DIST_LIBA} ${DIST_LIB} \
+	rm -f ${CORE_OBJECTS} $(SERVEROBJ) ${STORAGE_ENGINE_ALL_OBJ} ${TESTOBJ} ${REPAIR_TOOL_OBJ} ${DIST_LIBA} ${DIST_LIB} \
 	       ardb-test  ardb-server ardb-repair
 
 clobber: clean_deps clean
