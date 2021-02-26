@@ -34,7 +34,7 @@
 CXX=g++
 CC=gcc
 
-ARDB_VERSION=0.10.0
+ARDB_VERSION=0.10.2
 
 uname_S := $(shell sh -c 'uname -s 2>/dev/null || echo not')
 
@@ -52,7 +52,7 @@ SNAPPY_FILE=${SNAPPY_PATH}.tar.gz
 SNAPPY_REMOTE_FILE=https://github.com/google/snappy/releases/download/${SNAPPY_VER}/snappy-${SNAPPY_VER}.tar.gz
 SNAPPY_LIBA=${SNAPPY_PATH}/.libs/libsnappy.a
 
-ROCKSDB_VER=5.14.2
+ROCKSDB_VER=6.11.4
 ROCKSDB_PATH=${LIB_PATH}/rocksdb-${ROCKSDB_VER}
 ROCKSDB_REMOTE_FILE=https://github.com/facebook/rocksdb/archive/v${ROCKSDB_VER}.tar.gz
 ROCKSDB_FILE=${ROCKSDB_PATH}.tar.gz

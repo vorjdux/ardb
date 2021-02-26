@@ -1,3 +1,15 @@
+ardb (0.10.2-1) UNRELEASED; urgency=medium
+
+  * Changed to use WiredTiger storage.
+
+ -- Matheus Santos <vorj.dux@gmail.com>  Tue, 6 Oct 2020 16:43:00 +0100
+
+ardb (0.10.1-1) UNRELEASED; urgency=medium
+
+  * RocksDB Updated to 6.11.4.
+
+ -- Matheus Santos <vorj.dux@gmail.com>  Tue, 6 Oct 2020 13:05:00 +0100
+
 ardb (0.10.0-1) UNRELEASED; urgency=medium
 
   * Initial release.

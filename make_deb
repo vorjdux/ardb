@@ -7,7 +7,11 @@ distro=$(lsb_release -c -s)
 branch=$(git rev-parse --abbrev-ref HEAD)
 arch=$(dpkg-architecture -qDEB_BUILD_ARCH)
 
-new_version="$version$distro+$branch"
+if [ "$branch" = "master" ]; then
+    new_version="$version$distro"
+else
+    new_version="$version$distro+$branch"
+fi
 
-sudo mv "../ardb_${version}_${arch}.deb" "../../ardb_${new_version}_${arch}.deb"
-sudo mv "../ardb-dbg_${version}_${arch}.deb" "../../ardb-dbg_${new_version}_${arch}.deb"
+sudo mv "../ardb_${version}_${arch}.deb" "../ardb_${new_version}_${arch}.deb"
+sudo mv "../ardb-dbg_${version}_${arch}.deb" "../ardb-dbg_${new_version}_${arch}.deb"
